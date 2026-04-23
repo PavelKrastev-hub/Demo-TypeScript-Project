@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Container */
+.users-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 40px;
+}
+
+/* Card */
+.user-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Text */
+.name {
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #333;
+}
+
+.username {
+    margin-bottom: 6px;
+    color: #777;
+}
+
+.email {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Button */
+.view-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #4a90e2;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+
+.view-btn:hover {
+    background: #357ab8;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .users-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .users-container {
+        grid-template-columns: 1fr;
+    }
+}
