@@ -23,7 +23,7 @@ function generateSingleUser(user: User): string {
             <p class="username">${user.username}</p>
             <p class="email">${user.email}</p>
 
-            <<a href="/users/${user.id}">View Profile</a>>
+            <a href="/users/${user.id}" class="view-btn">View Profile</a>
         </div>
     `
 }
