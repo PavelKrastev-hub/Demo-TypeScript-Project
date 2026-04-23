@@ -4,7 +4,7 @@ import { render } from "../utils/html";
 
 const userService = new UserService();
 
-export async function renderUsersView() {
+export async function renderUsersView(): Promise<void> {
     const users = await userService.getAll();
 
     const template = ` 
@@ -16,7 +16,7 @@ export async function renderUsersView() {
     render(template);
 }
 
-function generateSingleUser(user: User) {
+function generateSingleUser(user: User): string {
     return `
         <div class="user-card">
             <h3 class="name">${user.name}</h3>
