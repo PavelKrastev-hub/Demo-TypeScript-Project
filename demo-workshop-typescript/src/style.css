@@ -93,3 +93,95 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+.profile-container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #f8fafc;
+    border-radius: 18px;
+}
+
+.profile-card {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 25px;
+}
+
+.profile-card h1 {
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.profile-username {
+    color: #6366f1;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.profile-card p {
+    color: #334155;
+    margin-bottom: 8px;
+}
+
+.profile-company {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+.profile-company h3 {
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: white;
+    background: #334155;
+    padding: 10px 16px;
+    border-radius: 8px;
+}
+
+.back-btn:hover {
+    background: #1e293b;
+}
+
+.profile-tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.tab-btn {
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    background: #e2e8f0;
+    color: #334155;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    color: white;
+}
+
+.profile-content {
+    background: white;
+    min-height: 250px;
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+}
+
+.empty-message {
+    color: #64748b;
+}
