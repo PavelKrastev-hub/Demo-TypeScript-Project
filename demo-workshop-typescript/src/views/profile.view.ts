@@ -1,5 +1,6 @@
 import { UserService } from "../services/user.service";
 import { render } from "../utils/html";
+import { showUsersPosts } from "./posts.view";
 
 const userSerivce = new UserService();
 
@@ -37,4 +38,23 @@ export async function renderProfileView(id: number) {
     `
 
     render(template);
+    attachProfileEvents(id);
+}
+
+export function attachProfileEvents(userId: number) {
+    const buttons = document.querySelectorAll('.tab-btn');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const tab = button.getAttribute('data-tab');
+
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+
+            button.classList.add('active');
+
+            if (tab === "posts") showUsersPosts(userId);
+            if (tab === "albums") showUserAlbums(userId);
+            if (tab === "todos") showUserTodos(userId);
+        })
+    })
 }
