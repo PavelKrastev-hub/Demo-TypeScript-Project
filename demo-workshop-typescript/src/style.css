@@ -185,3 +185,68 @@ body {
 .empty-message {
     color: #64748b;
 }
+
+.posts-container {
+    display: grid;
+    gap: 20px;
+}
+
+.post-card {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+.post-title {
+    color: #0f172a;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.post-body {
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.comments-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 9px 14px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.comments-btn:hover {
+    box-shadow: 0 6px 14px rgba(59, 130, 246, 0.35);
+    transform: translateY(-1px);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.page-btn {
+    border: none;
+    padding: 9px 14px;
+    border-radius: 8px;
+    background: #e2e8f0;
+    color: #334155;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.page-btn:hover,
+.page-btn.active {
+    background: #3b82f6;
+    color: white;
+}
