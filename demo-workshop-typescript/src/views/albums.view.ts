@@ -4,7 +4,7 @@ import { renderProfileContent } from "../utils/html";
 
 const albumService = new AlbumsService();
 
-export async function showUsersAlbums(usreId: number) {
+export async function showUserAlbums(usreId: number) {
     const albums = await albumService.getAlbumsByUser(usreId);
 
     const template = `
