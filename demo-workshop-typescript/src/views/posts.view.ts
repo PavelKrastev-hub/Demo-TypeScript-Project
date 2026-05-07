@@ -4,8 +4,8 @@ import { renderProfileContent } from "../utils/html";
 
 const postService = new PostService();
 
-let currentPage = 1;
-const postsPerPage = 10;
+// let currentPage = 1;
+// const postsPerPage = 10;
 
 export async function showUsersPosts(userId: number) {
     const posts = await postService.getPostsByUser(userId);
@@ -13,7 +13,7 @@ export async function showUsersPosts(userId: number) {
     const template = `
     <div class="posts-container">
             ${posts.map(post => generateSinglePost(post)).join('')}
-        </div>
+    </div>
     `
 
     renderProfileContent(template);
@@ -28,6 +28,6 @@ function generateSinglePost(post: Post) {
                     View Comments
                 </a>
                 <div class="comments-container" id="comments-${post.id}"></div>
-            </div>
+        </div>
         `
 } 
