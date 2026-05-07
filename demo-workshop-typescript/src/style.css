@@ -325,3 +325,72 @@ body {
     font-size: 13px;
     color: #334155;
 }
+
+.todos-container {
+    display: grid;
+    gap: 18px;
+}
+
+.todo-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 14px;
+
+    border: 1px solid #e2e8f0;
+
+    transition: all 0.2s ease;
+}
+
+.todo-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+}
+
+.todo-status {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    flex-shrink: 0;
+}
+
+.todo-card.completed .todo-status {
+    background: #dcfce7;
+}
+
+.todo-card.pending .todo-status {
+    background: #fef3c7;
+}
+
+.todo-content {
+    flex: 1;
+}
+
+.todo-title {
+    color: #0f172a;
+    font-size: 17px;
+    margin-bottom: 6px;
+
+    text-transform: capitalize;
+}
+
+.todo-state {
+    font-size: 14px;
+    color: #64748b;
+}
+
+.todo-card.completed .todo-title {
+    text-decoration: line-through;
+    color: #64748b;
+}
