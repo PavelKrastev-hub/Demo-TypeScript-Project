@@ -1,6 +1,9 @@
 import { UserService } from "../services/user.service";
 import { render } from "../utils/html";
+import { showUserAlbums } from "./albums.view";
 import { showUsersPosts } from "./posts.view";
+import { showUserTodos } from "./todos.view";
+import { renderUsersView } from "./users.view";
 
 const userSerivce = new UserService();
 
@@ -39,6 +42,8 @@ export async function renderProfileView(id: number) {
 
     render(template);
     attachProfileEvents(id);
+    attachUsersEvents();
+    showUsersPosts(id);
 }
 
 export function attachProfileEvents(userId: number) {
@@ -56,5 +61,17 @@ export function attachProfileEvents(userId: number) {
             if (tab === "albums") showUserAlbums(userId);
             if (tab === "todos") showUserTodos(userId);
         })
+    })
+}
+
+export function attachUsersEvents() {
+    const button = document.querySelector('.back-btn');
+
+    button?.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        history.pushState({}, '', '/users');
+
+        renderUsersView();
     })
 }
