@@ -35,7 +35,7 @@ function generateSingleComment(comment: Comment) {
     `
 }
 
-export function attachCommentEvents(userId: number) {
+function attachCommentEvents(userId: number) {
     const button = document.querySelector('.back-btn-post');
 
     button?.addEventListener('click', (e) => {
