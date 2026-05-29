@@ -35,9 +35,9 @@ function generateSinglePost(post: Post) {
 }
 
 function attachUserEvents(userId: number) {
-    const button = document.querySelector('.comments-btn');
+    const buttons = document.querySelectorAll('.comments-btn');
 
-    button?.addEventListener('click', (e) => {
+    buttons.forEach(button => button?.addEventListener('click', (e) => {
         e.preventDefault();
 
         const target = e.currentTarget as HTMLAnchorElement;
@@ -46,5 +46,5 @@ function attachUserEvents(userId: number) {
         history.pushState({}, '', `/users/${userId}/posts/${postId}/comments`);
 
         showPostComments(postId, userId);
-    })
+    }));
 }
