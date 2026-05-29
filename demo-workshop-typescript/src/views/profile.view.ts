@@ -9,6 +9,7 @@ const userSerivce = new UserService();
 
 export async function renderProfileView(id: number) {
     const user = await userSerivce.getById(id);
+    // const userPosts = 
 
     const template = `
         <section class="profile-container">
@@ -42,11 +43,11 @@ export async function renderProfileView(id: number) {
 
     render(template);
     attachProfileEvents(id);
-    attachUsersEvents();
+    attachUserEvents();
     showUsersPosts(id);
 }
 
-export function attachProfileEvents(userId: number) {
+function attachProfileEvents(userId: number) {
     const buttons = document.querySelectorAll('.tab-btn');
 
     buttons.forEach(button => {
@@ -64,7 +65,7 @@ export function attachProfileEvents(userId: number) {
     })
 }
 
-export function attachUsersEvents() {
+function attachUserEvents() {
     const button = document.querySelector('.back-btn');
 
     button?.addEventListener('click', (e) => {

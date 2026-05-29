@@ -1,6 +1,7 @@
 import type { Post } from "../interfaces/post.interface";
 import { PostService } from "../services/posts.service"
 import { renderProfileContent } from "../utils/html";
+import { showPostComments } from "./comments.view";
 
 const postService = new PostService();
 
@@ -17,6 +18,7 @@ export async function showUsersPosts(userId: number) {
     `
 
     renderProfileContent(template);
+    attachUserEvents(userId);
 }
 
 function generateSinglePost(post: Post) {
@@ -30,4 +32,19 @@ function generateSinglePost(post: Post) {
                 <div class="comments-container" id="comments-${post.id}"></div>
         </div>
         `
-} 
+}
+
+function attachUserEvents(userId: number) {
+    const button = document.querySelector('.comments-btn');
+
+    button?.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const target = e.currentTarget as HTMLAnchorElement;
+        const postId = Number(target.dataset.id);
+
+        history.pushState({}, '', `/users/${userId}/posts/${postId}/comments`);
+
+        showPostComments(postId, userId);
+    })
+}
