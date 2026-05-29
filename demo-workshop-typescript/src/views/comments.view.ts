@@ -9,7 +9,7 @@ export async function showPostComments(postId: number, userId: number) {
     const comments = await commentsService.getCommentsByPost(postId);
 
     const template = `
-        <a href="" class="back-btn">Back to Posts</a>
+        <a href="#" class="back-btn-post">Back to Posts</a>
         <div class="comments-wrapper">
             ${comments.map(comment => generateSingleComment(comment)).join("")}
         </div>
@@ -36,7 +36,7 @@ function generateSingleComment(comment: Comment) {
 }
 
 export function attachCommentEvents(userId: number) {
-    const button = document.querySelector('.back-btn');
+    const button = document.querySelector('.back-btn-post');
 
     button?.addEventListener('click', (e) => {
         e.preventDefault();
